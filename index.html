@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriValue AI | Smart Agricultural Resource Platform</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">A</div>
+            <div>
+                <h2>AgriValue<span>AI</span></h2>
+                <p>RESOURCE INTELLIGENCE</p>
+            </div>
+        </div>
+
+        <div class="side-label">WORKSPACE</div>
+
+        <nav class="navigation">
+            <a href="#dashboard" class="nav-link active">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="#identify" class="nav-link">
+                <span>＋</span> Resource Registry
+            </a>
+
+            <a href="#recommend" class="nav-link">
+                <span>✧</span> AI Recommendations
+            </a>
+
+            <a href="#matching" class="nav-link">
+                <span>⇄</span> Industry Matching
+            </a>
+
+            <a href="#analytics" class="nav-link">
+                <span>▥</span> Analytics & Reports
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="eco-card">
+                <div class="eco-icon">🌱</div>
+                <h3>Build a circular future.</h3>
+                <p>Turn agricultural leftovers into valuable opportunities.</p>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="avatar">AV</div>
+                <div>
+                    <strong>Project Workspace</strong>
+                    <small>Administrator</small>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+            <div>
+                <p class="breadcrumb">Workspace / Overview</p>
+                <h2>Resource Intelligence Dashboard</h2>
+            </div>
+
+            <div class="topbar-right">
+                <div class="system-status">
+                    <span class="status-dot"></span>
+                    System Active
+                </div>
+                <div class="top-avatar">AV</div>
+            </div>
+        </header>
+
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="page-section">
+
+            <div class="hero-section">
+                <div class="hero-content">
+                    <span class="eyebrow">SMART AGRICULTURE • CIRCULAR ECONOMY</span>
+
+                    <h1>Waste less.<br><span>Create more value.</span></h1>
+
+                    <p>
+                        Discover smarter ways to transform agricultural
+                        by-products into valuable resources for food,
+                        manufacturing and sustainable industries.
+                    </p>
+
+                    <a href="#identify" class="primary-btn">
+                        + Register a Resource
+                    </a>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-circle circle-one"></div>
+                    <div class="hero-circle circle-two"></div>
+                    <div class="hero-plant">🌿</div>
+
+                    <div class="floating-card">
+                        <span>♻</span>
+                        <div>
+                            <strong>Circular Economy</strong>
+                            <small>Turning waste into opportunity</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- KPI CARDS -->
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">PERFORMANCE OVERVIEW</span>
+                    <h2>Your resource impact</h2>
+                </div>
+                <span class="live-label">● LIVE DATA</span>
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Total Resources</span>
+                        <div class="stat-icon green">▦</div>
+                    </div>
+                    <h2 id="totalResources">0</h2>
+                    <p>Registered resource entries</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Available Quantity</span>
+                        <div class="stat-icon orange">◉</div>
+                    </div>
+                    <h2><span id="totalQuantity">0</span> <small>kg</small></h2>
+                    <p>Total agricultural by-products</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Estimated Value</span>
+                        <div class="stat-icon purple">₹</div>
+                    </div>
+                    <h2>₹<span id="totalValue">0</span></h2>
+                    <p>Illustrative resource value</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Industry Matches</span>
+                        <div class="stat-icon blue">⇄</div>
+                    </div>
+                    <h2 id="totalMatches">0</h2>
+                    <p>Potential industry opportunities</p>
+                </div>
+
+            </div>
+
+
+            <!-- CHARTS -->
+            <div class="dashboard-grid">
+
+                <div class="panel chart-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <span class="section-kicker">RESOURCE DISTRIBUTION</span>
+                            <h3>Resource overview</h3>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="resourceChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="panel process-panel">
+                    <span class="section-kicker">HOW IT WORKS</span>
+                    <h3>From waste to worth</h3>
+
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <div>
+                            <strong>Identify</strong>
+                            <p>Register agricultural by-products.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <div>
+                            <strong>Analyze</strong>
+                            <p>Explore possible utilization methods.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <div>
+                            <strong>Connect</strong>
+                            <p>Discover suitable industry sectors.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <div>
+                            <strong>Create Value</strong>
+                            <p>Explore opportunities for reuse.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESOURCE REGISTRY -->
+        <section id="identify" class="page-section content-section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">RESOURCE MANAGEMENT</span>
+                    <h2>Agricultural resource registry</h2>
+                    <p class="section-description">
+                        Record and manage available agricultural by-products.
+                    </p>
+                </div>
+            </div>
+
+            <div class="panel form-panel">
+                <h3>Register a new resource</h3>
+                <p class="muted">Enter the details of your agricultural by-product.</p>
+
+                <form id="wasteForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label>Resource Type</label>
+                            <select id="wasteType" required>
+                                <option value="">Select resource</option>
+                                <option>Banana Peel</option>
+                                <option>Sugarcane Bagasse</option>
+                                <option>Rice Husk</option>
+                                <option>Fruit Pulp</option>
+                                <option>Vegetable Waste</option>
+                                <option>Groundnut Shell</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Quantity (kg)</label>
+                            <input type="number" id="quantity" min="1" placeholder="Enter quantity" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Source / Farm Name</label>
+                            <input type="text" id="source" placeholder="Enter source name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Location</label>
+                            <input type="text" id="location" placeholder="Enter location" required>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="primary-btn">＋ Add Resource</button>
+
+                </form>
+            </div>
+
+            <div class="panel table-panel">
+                <div class="panel-heading">
+                    <div>
+                        <h3>Registered resources</h3>
+                        <p class="muted">Your recorded agricultural inventory.</p>
+                    </div>
+                    <span class="table-tag">INVENTORY</span>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Resource</th>
+                                <th>Quantity</th>
+                                <th>Source</th>
+                                <th>Location</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resourceTable">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- AI RECOMMENDATIONS -->
+        <section id="recommend" class="page-section content-section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">INTELLIGENT RESOURCE ANALYSIS</span>
+                    <h2>AI utilization recommendations</h2>
+                    <p class="section-description">
+                        Explore potential applications for agricultural by-products.
+                    </p>
+                </div>
+            </div>
+
+            <div class="recommend-layout">
+
+                <div class="panel recommend-form">
+                    <div class="recommend-icon">✧</div>
+                    <h3>Discover resource potential</h3>
+                    <p class="muted">
+                        Select a by-product to explore possible utilization methods.
+                    </p>
+
+                    <label>Select agricultural resource</label>
+
+                    <select id="recommendSelect">
+                        <option value="">Choose a resource</option>
+                        <option>Banana Peel</option>
+                        <option>Sugarcane Bagasse</option>
+                        <option>Rice Husk</option>
+                        <option>Fruit Pulp</option>
+                        <option>Vegetable Waste</option>
+                        <option>Groundnut Shell</option>
+                    </select>
+
+                    <button id="recommendBtn" class="primary-btn">Analyze Resource →</button>
+                </div>
+
+                <div class="panel recommendation-output" id="recommendResult">
+                    <div class="empty-state">
+                        <div>🌱</div>
+                        <h3>Your insights will appear here</h3>
+                        <p>Select a resource and start the analysis.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INDUSTRY MATCHING -->
+        <section id="matching" class="page-section content-section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">BUSINESS OPPORTUNITIES</span>
+                    <h2>Industry resource matching</h2>
+                    <p class="section-description">
+                        Explore industries that may utilize agricultural by-products.
+                    </p>
+                </div>
+            </div>
+
+            <div class="industry-grid" id="industryCards"></div>
+
+        </section>
+
+
+        <!-- ANALYTICS -->
+        <section id="analytics" class="page-section content-section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">DATA INSIGHTS</span>
+                    <h2>Analytics & reports</h2>
+                    <p class="section-description">
+                        Understand resource quantities and estimated value.
+                    </p>
+                </div>
+
+                <button id="exportBtn" class="secondary-btn">↓ Export CSV</button>
+            </div>
+
+            <div class="analytics-grid">
+
+                <div class="panel">
+                    <h3>Quantity by resource</h3>
+                    <div class="chart-container">
+                        <canvas id="quantityChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>Estimated value by resource</h3>
+                    <div class="chart-container">
+                        <canvas id="valueChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="panel summary-panel">
+                <span class="section-kicker">RESOURCE SUMMARY</span>
+                <h3>Overall impact report</h3>
+                <div id="summary"></div>
+            </div>
+
+        </section>
+
+
+        <footer class="footer">
+            <p>AgriValue AI © 2026</p>
+            <span>Turning agricultural by-products into opportunities.</span>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
